@@ -56,3 +56,15 @@ func GetLetterValue(letter rune) int {
 	}
 	return val - 38
 }
+
+func OneContainsTheOther(a, b []int) bool {
+    aContainsB := a[0] <= b[0] && a[1] >= b[1];
+    bContainsA := b[0] <= a[0] && b[1] >= a[1];
+    return aContainsB || bContainsA;
+}
+
+func OneOverlapsTheOther(a, b []int) bool {
+    aOverlapsB := a[0] <= b[1] && a[1] >= b[1];
+    bOverlapsA := b[0] <= a[1] && b[1] >= a[1];
+    return aOverlapsB || bOverlapsA;
+}
